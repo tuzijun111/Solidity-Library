@@ -481,7 +481,7 @@ library Math59x2 {
     ///
     /// @param x The signed 59.18-decimal fixed-point number for which to calculate the binary logarithm.
     /// @return result The binary logarithm as a signed 59.18-decimal fixed-point number.
-    function log2(int256 x) internal pure returns (int256 result) {
+    function log2(int256 x) public pure returns (int256 result) {
         if (x <= 0) {
             revert PRBMathSD59x18__LogInputTooSmall(x);
         }
