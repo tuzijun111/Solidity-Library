@@ -494,7 +494,7 @@ library Math59x2 {
                 sign = -1;
                 // Do the fixed-point inversion inline to save gas. The numerator is SCALE * SCALE.
                 assembly {
-                    x := div(SCALE * SCALE, x)
+                    x := div(10000, x)
                 }
             }
 
