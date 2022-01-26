@@ -108,7 +108,7 @@ library PRBMath {
     /// STORAGE ///
 
     /// @dev How many trailing decimals can be represented.
-    uint256 internal constant SCALE = 1e2;
+    uint256 internal constant SCALE = 1e18;
 
     /// @dev Largest power of two divisor of SCALE.
     uint256 internal constant SCALE_LPOTD = 262144;
