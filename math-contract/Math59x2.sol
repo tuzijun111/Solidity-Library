@@ -14,7 +14,7 @@ library Math59x2 {
     int256 internal constant LOG2_E = 1_442695040888963407;
 
     /// @dev Half the SCALE number.
-    int256 internal constant HALF_SCALE = 5e17;
+    int256 internal constant HALF_SCALE = 5e1;
 
     /// @dev The maximum value a signed 59.18-decimal fixed-point number can have.
     int256 internal constant MAX_SD59x18 =
