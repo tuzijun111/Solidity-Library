@@ -548,7 +548,7 @@ library Math59x2 {
     /// @param x The multiplicand as a signed 59.18-decimal fixed-point number.
     /// @param y The multiplier as a signed 59.18-decimal fixed-point number.
     /// @return result The product as a signed 59.18-decimal fixed-point number.
-    function mul(int256 x, int256 y) internal pure returns (int256 result) {
+    function mul(int256 x, int256 y) public pure returns (int256 result) {
         if (x == MIN_SD59x18 || y == MIN_SD59x18) {
             revert PRBMathSD59x18__MulInputTooSmall();
         }
