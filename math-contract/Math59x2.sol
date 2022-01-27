@@ -549,29 +549,7 @@ library Math59x2 {
     /// @param y The multiplier as a signed 59.18-decimal fixed-point number.
     /// @return result The product as a signed 59.18-decimal fixed-point number.
     function mul(int256 x, int256 y) public pure returns (int256 result) {
-        if (x == MIN_SD59x18 || y == MIN_SD59x18) {
-            revert PRBMathSD59x18__MulInputTooSmall();
-        }
-
-        unchecked {
-            uint256 ax;
-            uint256 ay;
-            ax = x < 0 ? uint256(-x) : uint256(x);
-            ay = y < 0 ? uint256(-y) : uint256(y);
-
-            uint256 rAbs = PRBMath.mulDivFixedPoint(ax, ay);
-            if (rAbs > uint256(MAX_SD59x18)) {
-                revert PRBMathSD59x18__MulOverflow(rAbs);
-            }
-
-            uint256 sx;
-            uint256 sy;
-            assembly {
-                sx := sgt(x, sub(0, 1))
-                sy := sgt(y, sub(0, 1))
-            }
-            result = sx ^ sy == 1 ? -int256(rAbs) : int256(rAbs);
-        }
+        return x*y/SCALE;
     }
 
     /// @notice Returns PI as a signed 59.18-decimal fixed-point number.
